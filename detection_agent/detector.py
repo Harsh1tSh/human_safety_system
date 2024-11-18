@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 # Load YOLO model files
+# create a seprate directory for yolov3.cfg and yolov3.weights
 net = cv2.dnn.readNet("weights/yolov3.weights", "weights/yolov3.cfg")  # .cfg file issues
 layer_names = net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in net.getLayers() if i[0] > 0]
